@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { HashRouter, Route, Redirect } from 'react-router-dom';
+import Login from './pages/login/Login';
+import Base from './pages/base/Base';
+import { connect } from 'react-redux';
+import { setUserAction } from './store/user/action';
+
+interface Props {
+  user: any;
+  setUser: (user: object) => void
+}
+class App extends React.Component<Props> {
+  user = window.localStorage.getItem('user');
+  componentWillMount() {
+    try {
+      this.user && this.props.setUser(JSON.parse(this.user));
+    } catch (error) {
+      window.localStorage.removeItem('user');
+    }
+  }
+  render () {
+    return (
+      <HashRouter>
+        { this.user || this.props.user ? <Route path="/home" component={Base} /> : <Redirect to="/login" /> }
+        <Route path="/login" exact component={Login} />
+      </HashRouter>
+    );
+  }
 }
 
-export default App;
+const mapState = (state: any) => ({
+  user: state.get('user')
+})
+
+//@ts-ignore
+const mapDispatch = (dispatch): Props => ({
+  setUser(user) {
+    dispatch(setUserAction(user));
+  }
+});
+export default connect(mapState, mapDispatch)(App);

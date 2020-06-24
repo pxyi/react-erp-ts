@@ -1,0 +1,19 @@
+.logo {
+  width: 200px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.logo > img {
+  display: inline-block;
+  width: 110px;
+  vertical-align: middle;
+}
+.sider {
+  margin-top: 70px;
+}
