@@ -15,7 +15,6 @@ interface Action {
 export default (state = defaultState, action: Action) => {
   switch (action.type) {
     case SET_USER: {
-      console.log('reducer set user', action.payload)
       window.localStorage.setItem('user', JSON.stringify(action.payload));
       return fromJS(action.payload);
     }

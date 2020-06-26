@@ -12,7 +12,7 @@ interface Props {
 }
 class App extends React.Component<Props> {
   user = window.localStorage.getItem('user');
-  componentWillMount() {
+  componentDidMount() {
     try {
       this.user && this.props.setUser(JSON.parse(this.user));
     } catch (error) {

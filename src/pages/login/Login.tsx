@@ -17,11 +17,12 @@ interface State {
 }
 
 class Login extends React.Component<Props, State> {
-
-  componentWillMount() {
+  //@ts-ignore
+  constructor(props) {
+    super(props);
     window.localStorage.removeItem('user');
     const initialValues = JSON.parse(Aes._decrypt_(window.localStorage.getItem('erp-login')) || '{"remember": true}');
-    this.setState({ initialValues });
+    this.state = { initialValues }
   }
   onFinish(values: any) {
     if (values.remember) {

@@ -5,6 +5,7 @@ import Qs from 'qs';
 axios.interceptors.request.use(
 
   config => { 
+    config.withCredentials = true;
     if (!config.url?.startsWith('http')) {
       config.url = `${process.env.REACT_APP_DOMAIN}${config.url}`;
     }

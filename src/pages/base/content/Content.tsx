@@ -7,7 +7,7 @@ import routes from './../../../core/menu';
 class Content extends React.Component {
   render() {
     return (
-      <div style={{ padding: 24, minHeight: 360, background: '#fff' }}>
+      <div style={{ padding: 24, background: '#fff' }}>
         <React.Suspense fallback={<div>Loading...</div>}>
           <Switch>
             { 

@@ -35,7 +35,7 @@ class Nav extends React.Component<Props> {
                 } else {
                   return (
                     <Menu.SubMenu key={menu.key} icon={menu.icon} title={menu.title}>
-                      {menu.children?.map((cm) => (<Menu.Item key={cm.key} onClick={() => { this.redirect(cm.key) }}>{cm.title}</Menu.Item>))}
+                      {(menu.children as any[]).map((cm: any) => (<Menu.Item key={cm.key} onClick={() => { this.redirect(cm.key) }}>{cm.title}</Menu.Item>))}
                     </Menu.SubMenu>
                   )
                 }

@@ -1,7 +1,6 @@
 
 //@ts-ignore
 const CryptoJS = window.CryptoJS;
-console.log(CryptoJS);
 /* ------------------------ AES加密 ------------------------ */
 const key = CryptoJS.enc.Utf8.parse('yulebaby88888888')             // 秘钥
 const encrypt = (str: string): string => {
