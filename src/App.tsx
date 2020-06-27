@@ -2,7 +2,7 @@ import React from 'react';
 
 import { HashRouter, Route, Redirect } from 'react-router-dom';
 import Login from './pages/login/Login';
-import Base from './pages/base/Base';
+import Base from './base/Base';
 import { connect } from 'react-redux';
 import { setUserAction } from './store/user/action';
 

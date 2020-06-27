@@ -1,11 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import MenuConfig from './../../../core/menu';
+import MenuConfig from '../../core/menu';
 
 import { Menu } from 'antd';
 import styles from './Nav.module.css';
-import Logo from './../../../statics/images/logo.png';
+import Logo from './../../statics/images/logo.png';
 
 interface Props {
   history: any

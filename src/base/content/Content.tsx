@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import routes from './../../../core/menu';
+import routes from '../../core/menu';
 
 
 class Content extends React.Component {

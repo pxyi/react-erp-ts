@@ -1,7 +1,7 @@
 import * as Icon from '@ant-design/icons';
 
 import React from 'react';
-const CustomerList = React.lazy(() => import('../pages/customer/list'));
+const CustomerList = React.lazy(() => import('../pages/customer/List'));
 const AppointmentList = React.lazy(() => import('../pages/appointment/list'));
 export default [
   {

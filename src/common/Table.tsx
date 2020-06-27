@@ -63,9 +63,9 @@ class Table extends React.Component<Props, State>  {
     }).catch(err => this.setState({ loading: false }))
   }
 
-  request(e) {
+  request(e?) {
     this.setState((state) => ({ pagination: { current: 1, pageSize: state.pagination.pageSize } }), () => {
-      this.getList(e)
+      this.getList(e || this.queryCriteria)
     })
   }
 
